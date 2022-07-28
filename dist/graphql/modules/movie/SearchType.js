@@ -19,25 +19,25 @@ var _default = new _graphql.GraphQLObjectType({
       page: {
         type: _graphql.GraphQLFloat,
         resolve: function resolve(search) {
-          return movie.page;
+          return search.page;
         }
       },
       total_results: {
         type: _graphql.GraphQLFloat,
         resolve: function resolve(search) {
-          return movie.total_results;
+          return search.total_results;
         }
       },
       total_pages: {
         type: _graphql.GraphQLFloat,
         resolve: function resolve(search) {
-          return movie.total_pages;
+          return search.total_pages;
         }
       },
       results: {
         type: new _graphql.GraphQLList(_MovieType["default"]),
         resolve: function resolve(search) {
-          return movie.results;
+          return search.results;
         }
       }
     };

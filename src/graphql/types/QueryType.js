@@ -31,7 +31,7 @@ export default new GraphQLObjectType({
             resolve: async (root, args) => {
                 try {
                     const { page } = args || {};
-                    const urlMoviesUpcoming = `${api_url}/movie/upcoming?api_key=${api_key}&language=en-US&page=${page}` ;
+                    const urlMoviesUpcoming = `${api_url}/movie/upcoming?api_key=${api_key}&language=es-ES&page=${page}` ;
 
                     let response = await fetch(urlMoviesUpcoming);
                     let data = await response.json();
@@ -50,7 +50,7 @@ export default new GraphQLObjectType({
             resolve: async (root, args) => {
                 try {
                     const { movie_id } = args || {};
-                    const url = `${api_url}/movie/${movie_id}?api_key=${api_key}&language=en-US`;
+                    const url = `${api_url}/movie/${movie_id}?api_key=${api_key}&language=es-ES`;
 
                     let response = await fetch(url);
                     let data = await response.json();
@@ -65,7 +65,7 @@ export default new GraphQLObjectType({
             type: new GraphQLList(GenreType),
             resolve: async (root, args) => {
                 try {
-                    const url = `${api_url}/genre/movie/list?api_key=${api_key}&language=en-US`;
+                    const url = `${api_url}/genre/movie/list?api_key=${api_key}&language=es-ES`;
 
                     let response = await fetch(url);
                     let data = await response.json();
@@ -85,7 +85,7 @@ export default new GraphQLObjectType({
             resolve: async (root, args) => {
                 try {
                     const {query, page} = args;
-                    const url = `${api_url}/search/movie?api_key=${api_key}&query=${query}&page=${page}&language=en-US`;
+                    const url = `${api_url}/search/movie?api_key=${api_key}&query=${query}&page=${page}&language=es-ES`;
 
                     let response = await fetch(url);
                     let data = await response.json();
